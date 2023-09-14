@@ -2,7 +2,9 @@
 
 **---->>:heavy_check_mark:已美化:wave:**	---------	:+1::point_up_2::star:
 
-### :green_book:1.项目简介
+### :green_book:1、介绍
+
+about
 
 **:sunflower:MusicPlayer**是基于Qt开发，并且未使用除了 C++标准库 和 Qt 之外的第三方库，保证了库的可移植性以及库的纯粹性。
 
@@ -60,11 +62,11 @@
 
 开发过程
 
-### :house_with_garden:1.界面设计
+### :house_with_garden:2、界面设计
 
 <img src="assets/image-20230914150348970.png" width="600px">
 
-#### 1.1 设计样式
+#### 2.1 设计样式
 
 :fallen_leaf:添加了一些动画效果和透明效果、让界面感觉更"高大尚":joy:
 
@@ -108,7 +110,7 @@ void MusicWidget::movieToLoad() {
 }
 ```
 
-#### 1.2 获取当前时间
+#### 2.2 获取当前时间
 
 添加一个定时器、每1000ms更新一次时间
 
@@ -130,7 +132,7 @@ void MusicWidget::updateCurrent() {
 }
 ```
 
-#### 1.3 窗口无边框、鼠标按住widget拖动
+#### 2.3 窗口无边框、鼠标按住widget拖动
 
 > 类似联想电脑管家窗口
 
@@ -140,7 +142,7 @@ void MusicWidget::updateCurrent() {
 this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinimizeButtonHint); 
 ```
 
-##### 1.3.1鼠标拖动
+##### 2.3.1鼠标拖动
 
 鼠标按住Widget主窗口的任意位置，可以拖动窗口
 
@@ -184,7 +186,7 @@ void MusicWidget::mouseMoveEvent(QMouseEvent *event) {
 
 
 
-##### 1.3.2最小化和关闭按钮
+##### 2.3.2最小化和关闭按钮
 
 ```c++
 /**
@@ -204,7 +206,7 @@ void MusicWidget::on_pushButtonDestroy_clicked() {
 }
 ```
 
-#### 1.4 设计图标软件显示图标
+#### 2.4 设计图标软件显示图标
 
 需要在.pro中添加上需要设置的图标名称
 
@@ -218,7 +220,7 @@ RC_ICONS = logo.ico
 
 
 
-### :palm_tree:4.简易音乐播放器MyMusicPlayer
+### :palm_tree:3、简易音乐播放器MyMusicPlayer
 
 需要在.pro添加multimedia多媒体模块				发音：/ˌmʌltiˈmiːdiə/
 
@@ -269,7 +271,7 @@ new一个播放器类的对象myPlayer
 myPlayer = new QMediaPlayer(this);
 ```
 
-#### 4.1播放playMusic
+#### 3.1播放playMusic
 
 用于播放指定路径的音乐。
 
@@ -286,7 +288,7 @@ void MyMusicPlayer::playMusic(QString mediaPath){
 }
 ```
 
-#### 4.2暂停音乐
+#### 3.2暂停音乐
 
 如果在播放则暂停
 
@@ -299,7 +301,7 @@ void MyMusicPlayer::pauseMusic(){
 }
 ```
 
-#### 4.3传递进度条数值、当前播放时间、总时间
+#### 3.3传递进度条数值、当前播放时间、总时间
 
 ```c++
 /**
@@ -318,7 +320,7 @@ void MyMusicPlayer::setSliderPlayProgress(){
 }
 ```
 
-#### 4.4 拖动滑块改变音乐播放位置
+#### 3.4 拖动滑块改变音乐播放位置
 
 ```c++
 /**
@@ -332,7 +334,7 @@ void MyMusicPlayer::setMusicPosition(int sliderPlayValue){
 }
 ```
 
-#### 4.5 设置播放器音量
+#### 3.5 设置播放器音量
 
 ```c++
 void MyMusicPlayer::setMusicVolume(int volume)
@@ -341,7 +343,7 @@ void MyMusicPlayer::setMusicVolume(int volume)
 }
 ```
 
-#### 4.6 判断当前播放器的状态
+#### 3.6 判断当前播放器的状态
 
 ```c++
 /*判断当前是否播放 	如果为true	则说明正在播放 反之亦然*/
@@ -350,7 +352,7 @@ bool MyMusicPlayer::isToplay(){
 }
 ```
 
-### :raised_hand_with_fingers_splayed:5.接收处理好的音乐数据
+### :raised_hand_with_fingers_splayed:4、接收处理好的音乐数据
 
 成员声明：
 
@@ -380,7 +382,7 @@ connect(timer2, &QTimer::timeout, myMediaPlayer, &MyMusicPlayer::setSliderPlayPr
 
 当点击播放音乐启动定时器，定时器结束后转到设置进度条数值的槽函数，
 
-#### 5.1 水平滑块位置跟随音乐变化
+#### 4.1 水平滑块位置跟随音乐变化
 
 计算滑块相对于音乐当前播放时间的位置，
 
@@ -402,7 +404,7 @@ void MusicWidget::sethSliderValue(const int &number) {
 }
 ```
 
-#### 5.2 添加音乐文件
+#### 4.2 添加音乐文件
 
 这里选用QHash存储音乐播放列表
 
@@ -430,7 +432,7 @@ void MusicWidget::on_btnAddMusic_clicked() {
 }
 ```
 
-#### 5.3 播放和暂停
+#### 4.3 播放和暂停
 
 如果当前的播放列表为空则不做响应，
 
@@ -458,7 +460,7 @@ void MusicWidget::on_btnPause_clicked() {
 }
 ```
 
-#### 5.4 拖动滑块改变音乐播放位置
+#### 4.4 拖动滑块改变音乐播放位置
 
 ```c++
 /**
@@ -495,9 +497,9 @@ void MusicWidget::on_hSliderPlayProgress_sliderReleased() {
 }
 ```
 
-#### 5.5 设置音量
+#### 4.5 设置音量
 
-##### 5.5.1 隐藏音量条、点击音量图标显示
+##### 4.5.1 隐藏音量条、点击音量图标显示
 
 ```c++
 /**
@@ -523,7 +525,7 @@ void MusicWidget::on_vSliderVolume_sliderReleased() {
 }
 ```
 
-##### 5.5.2 将音量值返回给播放器
+##### 4.5.2 将音量值返回给播放器
 
 ```c++
 void MusicWidget::on_vSliderVolume_valueChanged(int value) {
@@ -533,7 +535,7 @@ void MusicWidget::on_vSliderVolume_valueChanged(int value) {
 
 
 
-#### 5.6 双击播放/单击选中
+#### 4.6 双击播放/单击选中
 
 ##### 双击
 
@@ -561,9 +563,9 @@ void MusicWidget::on_lwMusicList_itemClicked(QListWidgetItem *item)
 
 
 
-#### 5.7 上下曲切换
+#### 4.7 上下曲切换
 
-##### 5.7.1 上一曲
+##### 4.7.1 上一曲
 
 如果音乐路径是空，则无效。
 
@@ -586,7 +588,7 @@ void MusicWidget::on_btnLast_clicked() {
 }
 ```
 
-##### 5.7.2 下一曲
+##### 4.7.2 下一曲
 
 同理如上，ListWidget列表是从0开始，我们的musicFileIndex的value值是从1开始的所以要减去1
 
@@ -630,7 +632,7 @@ void MusicWidget::setPreOrNextPlay() {
 
 
 
-#### 5.8 显示音乐当前播放时间/总时间
+#### 4.8 显示音乐当前播放时间/总时间
 
 > 这里涉及到线程类，通过子线程计算当前的时间和总时间，通过信号传递回来调用槽函数然后显示，再在第六节讲解
 
@@ -655,7 +657,7 @@ void MusicWidget::showMusicDuration(QString time){
 
 
 
-### :seedling:6.子线程
+### :seedling:5、子线程
 
 新建一个MyThread类
 
@@ -733,7 +735,7 @@ void MyThread::handlePlayDuration(const int &musicTime){
 
 
 
-### :point_up_2:7.主线程中创建子线程
+### :point_up_2:6、主线程中创建子线程
 
 声明
 
@@ -763,7 +765,7 @@ void MyThread::handlePlayDuration(const int &musicTime){
 	thread->start();
 ```
 
-### :arrows_counterclockwise:8.测试
+### :arrows_counterclockwise:8、测试
 
 对天气预报和音乐播放器分别进行测试，即使在未添加数据、音乐文件的情况下、点击任何按钮和操作，不会出现之前的程序崩溃异常，直接强制退出。二次优化后提高了程序的稳定性。
 
@@ -773,7 +775,7 @@ void MyThread::handlePlayDuration(const int &musicTime){
 
 测试结果：正常运行。
 
-### :mountain_railway:9.部署
+### :mountain_railway:9、部署
 
 理论上可将Qt部署到任何平台上
 
