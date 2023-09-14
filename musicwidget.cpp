@@ -49,10 +49,10 @@ void MusicWidget::UI_Design() {
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinimizeButtonHint);  //窗口为无边框，同时保留系统菜单和最小化按钮
 
     ui->btnPause->setIcon(QIcon(":/Image/pause.png"));
-    ui->btnPause->setStyleSheet( "QPushButton{background:rgba(255,255,225,0.2);color:#FFFAF0;border-radius:16px;padding:5px 5px}");
-    ui->btnVolume->setStyleSheet( "QPushButton{background:rgba(255,255,225,0.2);color:#FFFAF0;border-radius:16px;padding:5px 5px}");
-    ui->btnLast->setStyleSheet( "QPushButton{background:rgba(255,255,225,0.2);color:#FFFAF0;border-radius:16px;padding:5px 5px}");
-    ui->btnNext->setStyleSheet("QPushButton{background:rgba(255,255,225,0.2);color:#FFFAF0;border-radius:16px;padding:5px 5px}");
+    ui->btnPause->setStyleSheet( "QPushButton{background:rgba(255,255,255,0.2);border-radius:25px;padding:5px 5px}");
+    ui->btnVolume->setStyleSheet( "QPushButton{background:rgba(255,255,255,0.2);border-radius:25px;padding:5px 5px}");
+    ui->btnLast->setStyleSheet( "QPushButton{background:rgba(255,255,255,0.2);border-radius:25px;padding:5px 5px}");
+    ui->btnNext->setStyleSheet("QPushButton{background:rgba(255,255,255,0.2);border-radius:25px;padding:5px 5px}");
     ui->btnAddMusic->setStyleSheet("QPushButton::hover{font:19px;}" "QPushButton{background:rgba(255,255,225,0.2);color:#FFDEAD;border-radius:16px;padding:5px 5px}");
 
     ui->pushButtonMini->setIcon(QIcon(":/Image/Min.png"));   //最小化按钮
