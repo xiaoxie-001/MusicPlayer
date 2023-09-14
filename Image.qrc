@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Image/Close.png</file>
+        <file>Image/haimianbaby.gif</file>
+        <file>Image/last.png</file>
+        <file>Image/Min.png</file>
+        <file>Image/music2.png</file>
+        <file>Image/next.png</file>
+        <file>Image/paidaxing.gif</file>
+        <file>Image/pause.png</file>
+        <file>Image/stop.png</file>
+        <file>Image/volume.png</file>
+        <file>Image/timg07.gif</file>
+    </qresource>
+</RCC>
